@@ -8,6 +8,7 @@
         $full_name = trim($_POST['full_name']);
         $password = trim($_POST['reg_password']); 
 
+        $hash = md5($password);
 
         $user_register = new User;
         $user_register->register_user($username, $email, $hash, $full_name);
